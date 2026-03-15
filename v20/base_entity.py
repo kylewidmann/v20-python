@@ -34,9 +34,7 @@ def represent_odict(dump, tag, mapping, flow_style=None):
 
 
 class Property(object):
-    def __init__(
-        self, name, displayName, description, typeClass, typeName, required, default
-    ):
+    def __init__(self, name, displayName, description, typeClass, typeName, required, default):
         self.name = name
         self.displayName = displayName
         self.description = description
@@ -176,9 +174,7 @@ class BaseEntity(object):
     def yaml(self, verbose=False):
         yaml.SafeDumper.add_representer(
             OrderedDict,
-            lambda dumper, value: represent_odict(
-                dumper, "tag:yaml.org,2002:map", value
-            ),
+            lambda dumper, value: represent_odict(dumper, "tag:yaml.org,2002:map", value),
         )
 
         return yaml.safe_dump(

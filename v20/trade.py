@@ -172,9 +172,7 @@ class Trade(BaseEntity):
             data["marginUsed"] = ctx.convert_decimal_number(data.get("marginUsed"))
 
         if data.get("averageClosePrice") is not None:
-            data["averageClosePrice"] = ctx.convert_decimal_number(
-                data.get("averageClosePrice")
-            )
+            data["averageClosePrice"] = ctx.convert_decimal_number(data.get("averageClosePrice"))
 
         if data.get("financing") is not None:
             data["financing"] = ctx.convert_decimal_number(data.get("financing"))
@@ -190,9 +188,7 @@ class Trade(BaseEntity):
             )
 
         if data.get("stopLossOrder") is not None:
-            data["stopLossOrder"] = ctx.order.StopLossOrder.from_dict(
-                data["stopLossOrder"], ctx
-            )
+            data["stopLossOrder"] = ctx.order.StopLossOrder.from_dict(data["stopLossOrder"], ctx)
 
         if data.get("trailingStopLossOrder") is not None:
             data["trailingStopLossOrder"] = ctx.order.TrailingStopLossOrder.from_dict(
@@ -368,9 +364,7 @@ class TradeSummary(BaseEntity):
             data["marginUsed"] = ctx.convert_decimal_number(data.get("marginUsed"))
 
         if data.get("averageClosePrice") is not None:
-            data["averageClosePrice"] = ctx.convert_decimal_number(
-                data.get("averageClosePrice")
-            )
+            data["averageClosePrice"] = ctx.convert_decimal_number(data.get("averageClosePrice"))
 
         if data.get("financing") is not None:
             data["financing"] = ctx.convert_decimal_number(data.get("financing"))
@@ -514,8 +508,7 @@ class EntitySpec(object):
         if str(response.status) == "200":
             if jbody.get("trades") is not None:
                 parsed_body["trades"] = [
-                    self.ctx.trade.Trade.from_dict(d, self.ctx)
-                    for d in jbody.get("trades")
+                    self.ctx.trade.Trade.from_dict(d, self.ctx) for d in jbody.get("trades")
                 ]
 
             if jbody.get("lastTransactionID") is not None:
@@ -587,8 +580,7 @@ class EntitySpec(object):
         if str(response.status) == "200":
             if jbody.get("trades") is not None:
                 parsed_body["trades"] = [
-                    self.ctx.trade.Trade.from_dict(d, self.ctx)
-                    for d in jbody.get("trades")
+                    self.ctx.trade.Trade.from_dict(d, self.ctx) for d in jbody.get("trades")
                 ]
 
             if jbody.get("lastTransactionID") is not None:
@@ -663,9 +655,7 @@ class EntitySpec(object):
         #
         if str(response.status) == "200":
             if jbody.get("trade") is not None:
-                parsed_body["trade"] = self.ctx.trade.Trade.from_dict(
-                    jbody["trade"], self.ctx
-                )
+                parsed_body["trade"] = self.ctx.trade.Trade.from_dict(jbody["trade"], self.ctx)
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -723,9 +713,7 @@ class EntitySpec(object):
             request
         """
 
-        request = Request(
-            "PUT", "/v3/accounts/{accountID}/trades/{tradeSpecifier}/close"
-        )
+        request = Request("PUT", "/v3/accounts/{accountID}/trades/{tradeSpecifier}/close")
 
         request.set_path_param("accountID", accountID)
 
@@ -776,9 +764,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -816,9 +802,7 @@ class EntitySpec(object):
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("errorCode") is not None:
                 parsed_body["errorCode"] = jbody.get("errorCode")
@@ -902,9 +886,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -921,9 +903,7 @@ class EntitySpec(object):
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("errorCode") is not None:
                 parsed_body["errorCode"] = jbody.get("errorCode")
@@ -950,9 +930,7 @@ class EntitySpec(object):
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("errorCode") is not None:
                 parsed_body["errorCode"] = jbody.get("errorCode")
@@ -1017,9 +995,7 @@ class EntitySpec(object):
             request
         """
 
-        request = Request(
-            "PUT", "/v3/accounts/{accountID}/trades/{tradeSpecifier}/orders"
-        )
+        request = Request("PUT", "/v3/accounts/{accountID}/trades/{tradeSpecifier}/orders")
 
         request.set_path_param("accountID", accountID)
 
@@ -1125,9 +1101,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -1179,9 +1153,7 @@ class EntitySpec(object):
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("errorCode") is not None:
                 parsed_body["errorCode"] = jbody.get("errorCode")

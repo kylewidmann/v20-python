@@ -304,19 +304,13 @@ class CalculatedPositionState(BaseEntity):
         data = data.copy()
 
         if data.get("netUnrealizedPL") is not None:
-            data["netUnrealizedPL"] = ctx.convert_decimal_number(
-                data.get("netUnrealizedPL")
-            )
+            data["netUnrealizedPL"] = ctx.convert_decimal_number(data.get("netUnrealizedPL"))
 
         if data.get("longUnrealizedPL") is not None:
-            data["longUnrealizedPL"] = ctx.convert_decimal_number(
-                data.get("longUnrealizedPL")
-            )
+            data["longUnrealizedPL"] = ctx.convert_decimal_number(data.get("longUnrealizedPL"))
 
         if data.get("shortUnrealizedPL") is not None:
-            data["shortUnrealizedPL"] = ctx.convert_decimal_number(
-                data.get("shortUnrealizedPL")
-            )
+            data["shortUnrealizedPL"] = ctx.convert_decimal_number(data.get("shortUnrealizedPL"))
 
         if data.get("marginUsed") is not None:
             data["marginUsed"] = ctx.convert_decimal_number(data.get("marginUsed"))
@@ -597,9 +591,7 @@ class EntitySpec(object):
             request
         """
 
-        request = Request(
-            "PUT", "/v3/accounts/{accountID}/positions/{instrument}/close"
-        )
+        request = Request("PUT", "/v3/accounts/{accountID}/positions/{instrument}/close")
 
         request.set_path_param("accountID", accountID)
 
@@ -680,9 +672,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -703,9 +693,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -739,9 +727,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")

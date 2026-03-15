@@ -7421,9 +7421,7 @@ trade_TradeSummary = [
 ]
 
 trade_CalculatedTradeState = [
-    Property(
-        "id", "Trade ID", "The Trade's ID.", "primitive", "trade.TradeID", None, None
-    ),
+    Property("id", "Trade ID", "The Trade's ID.", "primitive", "trade.TradeID", None, None),
     Property(
         "unrealizedPL",
         "Trade UPL",
@@ -7592,9 +7590,7 @@ order_OrderIdentifier = [
 ]
 
 order_DynamicOrderState = [
-    Property(
-        "id", "Order ID", "The Order's ID.", "primitive", "order.OrderID", None, None
-    ),
+    Property("id", "Order ID", "The Order's ID.", "primitive", "order.OrderID", None, None),
     Property(
         "trailingStopValue",
         "Trailing Stop Value",

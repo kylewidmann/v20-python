@@ -237,8 +237,7 @@ class OrderBook(BaseEntity):
 
         if data.get("buckets") is not None:
             data["buckets"] = [
-                ctx.instrument.OrderBookBucket.from_dict(d, ctx)
-                for d in data.get("buckets")
+                ctx.instrument.OrderBookBucket.from_dict(d, ctx) for d in data.get("buckets")
             ]
 
         return OrderBook(**data)
@@ -304,14 +303,10 @@ class OrderBookBucket(BaseEntity):
             data["price"] = ctx.convert_decimal_number(data.get("price"))
 
         if data.get("longCountPercent") is not None:
-            data["longCountPercent"] = ctx.convert_decimal_number(
-                data.get("longCountPercent")
-            )
+            data["longCountPercent"] = ctx.convert_decimal_number(data.get("longCountPercent"))
 
         if data.get("shortCountPercent") is not None:
-            data["shortCountPercent"] = ctx.convert_decimal_number(
-                data.get("shortCountPercent")
-            )
+            data["shortCountPercent"] = ctx.convert_decimal_number(data.get("shortCountPercent"))
 
         return OrderBookBucket(**data)
 
@@ -390,8 +385,7 @@ class PositionBook(BaseEntity):
 
         if data.get("buckets") is not None:
             data["buckets"] = [
-                ctx.instrument.PositionBookBucket.from_dict(d, ctx)
-                for d in data.get("buckets")
+                ctx.instrument.PositionBookBucket.from_dict(d, ctx) for d in data.get("buckets")
             ]
 
         return PositionBook(**data)
@@ -457,14 +451,10 @@ class PositionBookBucket(BaseEntity):
             data["price"] = ctx.convert_decimal_number(data.get("price"))
 
         if data.get("longCountPercent") is not None:
-            data["longCountPercent"] = ctx.convert_decimal_number(
-                data.get("longCountPercent")
-            )
+            data["longCountPercent"] = ctx.convert_decimal_number(data.get("longCountPercent"))
 
         if data.get("shortCountPercent") is not None:
-            data["shortCountPercent"] = ctx.convert_decimal_number(
-                data.get("shortCountPercent")
-            )
+            data["shortCountPercent"] = ctx.convert_decimal_number(data.get("shortCountPercent"))
 
         return PositionBookBucket(**data)
 
@@ -915,10 +905,8 @@ class EntitySpec(object):
         #
         if str(response.status) == "200":
             if jbody.get("positionBook") is not None:
-                parsed_body["positionBook"] = (
-                    self.ctx.instrument.PositionBook.from_dict(
-                        jbody["positionBook"], self.ctx
-                    )
+                parsed_body["positionBook"] = self.ctx.instrument.PositionBook.from_dict(
+                    jbody["positionBook"], self.ctx
                 )
 
         elif str(response.status) == "400":

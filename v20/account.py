@@ -287,14 +287,10 @@ class Account(BaseEntity):
             data["marginUsed"] = ctx.convert_decimal_number(data.get("marginUsed"))
 
         if data.get("marginAvailable") is not None:
-            data["marginAvailable"] = ctx.convert_decimal_number(
-                data.get("marginAvailable")
-            )
+            data["marginAvailable"] = ctx.convert_decimal_number(data.get("marginAvailable"))
 
         if data.get("positionValue") is not None:
-            data["positionValue"] = ctx.convert_decimal_number(
-                data.get("positionValue")
-            )
+            data["positionValue"] = ctx.convert_decimal_number(data.get("positionValue"))
 
         if data.get("marginCloseoutUnrealizedPL") is not None:
             data["marginCloseoutUnrealizedPL"] = ctx.convert_decimal_number(
@@ -302,9 +298,7 @@ class Account(BaseEntity):
             )
 
         if data.get("marginCloseoutNAV") is not None:
-            data["marginCloseoutNAV"] = ctx.convert_decimal_number(
-                data.get("marginCloseoutNAV")
-            )
+            data["marginCloseoutNAV"] = ctx.convert_decimal_number(data.get("marginCloseoutNAV"))
 
         if data.get("marginCloseoutMarginUsed") is not None:
             data["marginCloseoutMarginUsed"] = ctx.convert_decimal_number(
@@ -322,9 +316,7 @@ class Account(BaseEntity):
             )
 
         if data.get("withdrawalLimit") is not None:
-            data["withdrawalLimit"] = ctx.convert_decimal_number(
-                data.get("withdrawalLimit")
-            )
+            data["withdrawalLimit"] = ctx.convert_decimal_number(data.get("withdrawalLimit"))
 
         if data.get("marginCallMarginUsed") is not None:
             data["marginCallMarginUsed"] = ctx.convert_decimal_number(
@@ -332,14 +324,10 @@ class Account(BaseEntity):
             )
 
         if data.get("marginCallPercent") is not None:
-            data["marginCallPercent"] = ctx.convert_decimal_number(
-                data.get("marginCallPercent")
-            )
+            data["marginCallPercent"] = ctx.convert_decimal_number(data.get("marginCallPercent"))
 
         if data.get("trades") is not None:
-            data["trades"] = [
-                ctx.trade.TradeSummary.from_dict(d, ctx) for d in data.get("trades")
-            ]
+            data["trades"] = [ctx.trade.TradeSummary.from_dict(d, ctx) for d in data.get("trades")]
 
         if data.get("positions") is not None:
             data["positions"] = [
@@ -347,9 +335,7 @@ class Account(BaseEntity):
             ]
 
         if data.get("orders") is not None:
-            data["orders"] = [
-                ctx.order.Order.from_dict(d, ctx) for d in data.get("orders")
-            ]
+            data["orders"] = [ctx.order.Order.from_dict(d, ctx) for d in data.get("orders")]
 
         return Account(**data)
 
@@ -491,14 +477,10 @@ class AccountChangesState(BaseEntity):
             data["marginUsed"] = ctx.convert_decimal_number(data.get("marginUsed"))
 
         if data.get("marginAvailable") is not None:
-            data["marginAvailable"] = ctx.convert_decimal_number(
-                data.get("marginAvailable")
-            )
+            data["marginAvailable"] = ctx.convert_decimal_number(data.get("marginAvailable"))
 
         if data.get("positionValue") is not None:
-            data["positionValue"] = ctx.convert_decimal_number(
-                data.get("positionValue")
-            )
+            data["positionValue"] = ctx.convert_decimal_number(data.get("positionValue"))
 
         if data.get("marginCloseoutUnrealizedPL") is not None:
             data["marginCloseoutUnrealizedPL"] = ctx.convert_decimal_number(
@@ -506,9 +488,7 @@ class AccountChangesState(BaseEntity):
             )
 
         if data.get("marginCloseoutNAV") is not None:
-            data["marginCloseoutNAV"] = ctx.convert_decimal_number(
-                data.get("marginCloseoutNAV")
-            )
+            data["marginCloseoutNAV"] = ctx.convert_decimal_number(data.get("marginCloseoutNAV"))
 
         if data.get("marginCloseoutMarginUsed") is not None:
             data["marginCloseoutMarginUsed"] = ctx.convert_decimal_number(
@@ -526,9 +506,7 @@ class AccountChangesState(BaseEntity):
             )
 
         if data.get("withdrawalLimit") is not None:
-            data["withdrawalLimit"] = ctx.convert_decimal_number(
-                data.get("withdrawalLimit")
-            )
+            data["withdrawalLimit"] = ctx.convert_decimal_number(data.get("withdrawalLimit"))
 
         if data.get("marginCallMarginUsed") is not None:
             data["marginCallMarginUsed"] = ctx.convert_decimal_number(
@@ -536,20 +514,16 @@ class AccountChangesState(BaseEntity):
             )
 
         if data.get("marginCallPercent") is not None:
-            data["marginCallPercent"] = ctx.convert_decimal_number(
-                data.get("marginCallPercent")
-            )
+            data["marginCallPercent"] = ctx.convert_decimal_number(data.get("marginCallPercent"))
 
         if data.get("orders") is not None:
             data["orders"] = [
-                ctx.order.DynamicOrderState.from_dict(d, ctx)
-                for d in data.get("orders")
+                ctx.order.DynamicOrderState.from_dict(d, ctx) for d in data.get("orders")
             ]
 
         if data.get("trades") is not None:
             data["trades"] = [
-                ctx.trade.CalculatedTradeState.from_dict(d, ctx)
-                for d in data.get("trades")
+                ctx.trade.CalculatedTradeState.from_dict(d, ctx) for d in data.get("trades")
             ]
 
         if data.get("positions") is not None:
@@ -884,14 +858,10 @@ class AccountSummary(BaseEntity):
             data["marginUsed"] = ctx.convert_decimal_number(data.get("marginUsed"))
 
         if data.get("marginAvailable") is not None:
-            data["marginAvailable"] = ctx.convert_decimal_number(
-                data.get("marginAvailable")
-            )
+            data["marginAvailable"] = ctx.convert_decimal_number(data.get("marginAvailable"))
 
         if data.get("positionValue") is not None:
-            data["positionValue"] = ctx.convert_decimal_number(
-                data.get("positionValue")
-            )
+            data["positionValue"] = ctx.convert_decimal_number(data.get("positionValue"))
 
         if data.get("marginCloseoutUnrealizedPL") is not None:
             data["marginCloseoutUnrealizedPL"] = ctx.convert_decimal_number(
@@ -899,9 +869,7 @@ class AccountSummary(BaseEntity):
             )
 
         if data.get("marginCloseoutNAV") is not None:
-            data["marginCloseoutNAV"] = ctx.convert_decimal_number(
-                data.get("marginCloseoutNAV")
-            )
+            data["marginCloseoutNAV"] = ctx.convert_decimal_number(data.get("marginCloseoutNAV"))
 
         if data.get("marginCloseoutMarginUsed") is not None:
             data["marginCloseoutMarginUsed"] = ctx.convert_decimal_number(
@@ -919,9 +887,7 @@ class AccountSummary(BaseEntity):
             )
 
         if data.get("withdrawalLimit") is not None:
-            data["withdrawalLimit"] = ctx.convert_decimal_number(
-                data.get("withdrawalLimit")
-            )
+            data["withdrawalLimit"] = ctx.convert_decimal_number(data.get("withdrawalLimit"))
 
         if data.get("marginCallMarginUsed") is not None:
             data["marginCallMarginUsed"] = ctx.convert_decimal_number(
@@ -929,9 +895,7 @@ class AccountSummary(BaseEntity):
             )
 
         if data.get("marginCallPercent") is not None:
-            data["marginCallPercent"] = ctx.convert_decimal_number(
-                data.get("marginCallPercent")
-            )
+            data["marginCallPercent"] = ctx.convert_decimal_number(data.get("marginCallPercent"))
 
         return AccountSummary(**data)
 
@@ -1055,14 +1019,10 @@ class CalculatedAccountState(BaseEntity):
             data["marginUsed"] = ctx.convert_decimal_number(data.get("marginUsed"))
 
         if data.get("marginAvailable") is not None:
-            data["marginAvailable"] = ctx.convert_decimal_number(
-                data.get("marginAvailable")
-            )
+            data["marginAvailable"] = ctx.convert_decimal_number(data.get("marginAvailable"))
 
         if data.get("positionValue") is not None:
-            data["positionValue"] = ctx.convert_decimal_number(
-                data.get("positionValue")
-            )
+            data["positionValue"] = ctx.convert_decimal_number(data.get("positionValue"))
 
         if data.get("marginCloseoutUnrealizedPL") is not None:
             data["marginCloseoutUnrealizedPL"] = ctx.convert_decimal_number(
@@ -1070,9 +1030,7 @@ class CalculatedAccountState(BaseEntity):
             )
 
         if data.get("marginCloseoutNAV") is not None:
-            data["marginCloseoutNAV"] = ctx.convert_decimal_number(
-                data.get("marginCloseoutNAV")
-            )
+            data["marginCloseoutNAV"] = ctx.convert_decimal_number(data.get("marginCloseoutNAV"))
 
         if data.get("marginCloseoutMarginUsed") is not None:
             data["marginCloseoutMarginUsed"] = ctx.convert_decimal_number(
@@ -1090,9 +1048,7 @@ class CalculatedAccountState(BaseEntity):
             )
 
         if data.get("withdrawalLimit") is not None:
-            data["withdrawalLimit"] = ctx.convert_decimal_number(
-                data.get("withdrawalLimit")
-            )
+            data["withdrawalLimit"] = ctx.convert_decimal_number(data.get("withdrawalLimit"))
 
         if data.get("marginCallMarginUsed") is not None:
             data["marginCallMarginUsed"] = ctx.convert_decimal_number(
@@ -1100,9 +1056,7 @@ class CalculatedAccountState(BaseEntity):
             )
 
         if data.get("marginCallPercent") is not None:
-            data["marginCallPercent"] = ctx.convert_decimal_number(
-                data.get("marginCallPercent")
-            )
+            data["marginCallPercent"] = ctx.convert_decimal_number(data.get("marginCallPercent"))
 
         return CalculatedAccountState(**data)
 
@@ -1214,20 +1168,17 @@ class AccountChanges(BaseEntity):
 
         if data.get("tradesOpened") is not None:
             data["tradesOpened"] = [
-                ctx.trade.TradeSummary.from_dict(d, ctx)
-                for d in data.get("tradesOpened")
+                ctx.trade.TradeSummary.from_dict(d, ctx) for d in data.get("tradesOpened")
             ]
 
         if data.get("tradesReduced") is not None:
             data["tradesReduced"] = [
-                ctx.trade.TradeSummary.from_dict(d, ctx)
-                for d in data.get("tradesReduced")
+                ctx.trade.TradeSummary.from_dict(d, ctx) for d in data.get("tradesReduced")
             ]
 
         if data.get("tradesClosed") is not None:
             data["tradesClosed"] = [
-                ctx.trade.TradeSummary.from_dict(d, ctx)
-                for d in data.get("tradesClosed")
+                ctx.trade.TradeSummary.from_dict(d, ctx) for d in data.get("tradesClosed")
             ]
 
         if data.get("positions") is not None:
@@ -1237,8 +1188,7 @@ class AccountChanges(BaseEntity):
 
         if data.get("transactions") is not None:
             data["transactions"] = [
-                ctx.transaction.Transaction.from_dict(d, ctx)
-                for d in data.get("transactions")
+                ctx.transaction.Transaction.from_dict(d, ctx) for d in data.get("transactions")
             ]
 
         return AccountChanges(**data)

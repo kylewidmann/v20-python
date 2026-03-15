@@ -112,14 +112,12 @@ class ClientPrice(BaseEntity):
 
         if data.get("bids") is not None:
             data["bids"] = [
-                ctx.pricing_common.PriceBucket.from_dict(d, ctx)
-                for d in data.get("bids")
+                ctx.pricing_common.PriceBucket.from_dict(d, ctx) for d in data.get("bids")
             ]
 
         if data.get("asks") is not None:
             data["asks"] = [
-                ctx.pricing_common.PriceBucket.from_dict(d, ctx)
-                for d in data.get("asks")
+                ctx.pricing_common.PriceBucket.from_dict(d, ctx) for d in data.get("asks")
             ]
 
         if data.get("closeoutBid") is not None:
@@ -129,16 +127,12 @@ class ClientPrice(BaseEntity):
             data["closeoutAsk"] = ctx.convert_decimal_number(data.get("closeoutAsk"))
 
         if data.get("quoteHomeConversionFactors") is not None:
-            data["quoteHomeConversionFactors"] = (
-                ctx.pricing.QuoteHomeConversionFactors.from_dict(
-                    data["quoteHomeConversionFactors"], ctx
-                )
+            data["quoteHomeConversionFactors"] = ctx.pricing.QuoteHomeConversionFactors.from_dict(
+                data["quoteHomeConversionFactors"], ctx
             )
 
         if data.get("unitsAvailable") is not None:
-            data["unitsAvailable"] = ctx.order.UnitsAvailable.from_dict(
-                data["unitsAvailable"], ctx
-            )
+            data["unitsAvailable"] = ctx.order.UnitsAvailable.from_dict(data["unitsAvailable"], ctx)
 
         return ClientPrice(**data)
 
@@ -199,14 +193,10 @@ class QuoteHomeConversionFactors(BaseEntity):
         data = data.copy()
 
         if data.get("positiveUnits") is not None:
-            data["positiveUnits"] = ctx.convert_decimal_number(
-                data.get("positiveUnits")
-            )
+            data["positiveUnits"] = ctx.convert_decimal_number(data.get("positiveUnits"))
 
         if data.get("negativeUnits") is not None:
-            data["negativeUnits"] = ctx.convert_decimal_number(
-                data.get("negativeUnits")
-            )
+            data["negativeUnits"] = ctx.convert_decimal_number(data.get("negativeUnits"))
 
         return QuoteHomeConversionFactors(**data)
 
@@ -282,9 +272,7 @@ class HomeConversions(BaseEntity):
             data["accountLoss"] = ctx.convert_decimal_number(data.get("accountLoss"))
 
         if data.get("positionValue") is not None:
-            data["positionValue"] = ctx.convert_decimal_number(
-                data.get("positionValue")
-            )
+            data["positionValue"] = ctx.convert_decimal_number(data.get("positionValue"))
 
         return HomeConversions(**data)
 
@@ -561,9 +549,7 @@ class EntitySpec(object):
 
         request.set_param("includeUnitsAvailable", kwargs.get("includeUnitsAvailable"))
 
-        request.set_param(
-            "includeHomeConversions", kwargs.get("includeHomeConversions")
-        )
+        request.set_param("includeHomeConversions", kwargs.get("includeHomeConversions"))
 
         response = self.ctx.request(request)
 
@@ -583,8 +569,7 @@ class EntitySpec(object):
         if str(response.status) == "200":
             if jbody.get("prices") is not None:
                 parsed_body["prices"] = [
-                    self.ctx.pricing.ClientPrice.from_dict(d, self.ctx)
-                    for d in jbody.get("prices")
+                    self.ctx.pricing.ClientPrice.from_dict(d, self.ctx) for d in jbody.get("prices")
                 ]
 
             if jbody.get("homeConversions") is not None:
@@ -757,9 +742,7 @@ class EntitySpec(object):
             request
         """
 
-        request = Request(
-            "GET", "/v3/accounts/{accountID}/instruments/{instrument}/candles"
-        )
+        request = Request("GET", "/v3/accounts/{accountID}/instruments/{instrument}/candles")
 
         request.set_path_param("instrument", instrument)
 

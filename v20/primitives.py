@@ -116,9 +116,7 @@ class Instrument(BaseEntity):
         data = data.copy()
 
         if data.get("minimumTradeSize") is not None:
-            data["minimumTradeSize"] = ctx.convert_decimal_number(
-                data.get("minimumTradeSize")
-            )
+            data["minimumTradeSize"] = ctx.convert_decimal_number(data.get("minimumTradeSize"))
 
         if data.get("maximumTrailingStopDistance") is not None:
             data["maximumTrailingStopDistance"] = ctx.convert_decimal_number(
@@ -136,9 +134,7 @@ class Instrument(BaseEntity):
             )
 
         if data.get("maximumOrderUnits") is not None:
-            data["maximumOrderUnits"] = ctx.convert_decimal_number(
-                data.get("maximumOrderUnits")
-            )
+            data["maximumOrderUnits"] = ctx.convert_decimal_number(data.get("maximumOrderUnits"))
 
         if data.get("marginRate") is not None:
             data["marginRate"] = ctx.convert_decimal_number(data.get("marginRate"))
@@ -212,9 +208,7 @@ class InstrumentCommission(BaseEntity):
             data["unitsTraded"] = ctx.convert_decimal_number(data.get("unitsTraded"))
 
         if data.get("minimumCommission") is not None:
-            data["minimumCommission"] = ctx.convert_decimal_number(
-                data.get("minimumCommission")
-            )
+            data["minimumCommission"] = ctx.convert_decimal_number(data.get("minimumCommission"))
 
         return InstrumentCommission(**data)
 

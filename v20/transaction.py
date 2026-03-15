@@ -695,9 +695,7 @@ class TransferFundsTransaction(BaseEntity):
             data["amount"] = ctx.convert_decimal_number(data.get("amount"))
 
         if data.get("accountBalance") is not None:
-            data["accountBalance"] = ctx.convert_decimal_number(
-                data.get("accountBalance")
-            )
+            data["accountBalance"] = ctx.convert_decimal_number(data.get("accountBalance"))
 
         return TransferFundsTransaction(**data)
 
@@ -994,31 +992,23 @@ class MarketOrderTransaction(BaseEntity):
             )
 
         if data.get("longPositionCloseout") is not None:
-            data["longPositionCloseout"] = (
-                ctx.transaction.MarketOrderPositionCloseout.from_dict(
-                    data["longPositionCloseout"], ctx
-                )
+            data["longPositionCloseout"] = ctx.transaction.MarketOrderPositionCloseout.from_dict(
+                data["longPositionCloseout"], ctx
             )
 
         if data.get("shortPositionCloseout") is not None:
-            data["shortPositionCloseout"] = (
-                ctx.transaction.MarketOrderPositionCloseout.from_dict(
-                    data["shortPositionCloseout"], ctx
-                )
+            data["shortPositionCloseout"] = ctx.transaction.MarketOrderPositionCloseout.from_dict(
+                data["shortPositionCloseout"], ctx
             )
 
         if data.get("marginCloseout") is not None:
-            data["marginCloseout"] = (
-                ctx.transaction.MarketOrderMarginCloseout.from_dict(
-                    data["marginCloseout"], ctx
-                )
+            data["marginCloseout"] = ctx.transaction.MarketOrderMarginCloseout.from_dict(
+                data["marginCloseout"], ctx
             )
 
         if data.get("delayedTradeClose") is not None:
-            data["delayedTradeClose"] = (
-                ctx.transaction.MarketOrderDelayedTradeClose.from_dict(
-                    data["delayedTradeClose"], ctx
-                )
+            data["delayedTradeClose"] = ctx.transaction.MarketOrderDelayedTradeClose.from_dict(
+                data["delayedTradeClose"], ctx
             )
 
         if data.get("clientExtensions") is not None:
@@ -1037,10 +1027,8 @@ class MarketOrderTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -1241,31 +1229,23 @@ class MarketOrderRejectTransaction(BaseEntity):
             )
 
         if data.get("longPositionCloseout") is not None:
-            data["longPositionCloseout"] = (
-                ctx.transaction.MarketOrderPositionCloseout.from_dict(
-                    data["longPositionCloseout"], ctx
-                )
+            data["longPositionCloseout"] = ctx.transaction.MarketOrderPositionCloseout.from_dict(
+                data["longPositionCloseout"], ctx
             )
 
         if data.get("shortPositionCloseout") is not None:
-            data["shortPositionCloseout"] = (
-                ctx.transaction.MarketOrderPositionCloseout.from_dict(
-                    data["shortPositionCloseout"], ctx
-                )
+            data["shortPositionCloseout"] = ctx.transaction.MarketOrderPositionCloseout.from_dict(
+                data["shortPositionCloseout"], ctx
             )
 
         if data.get("marginCloseout") is not None:
-            data["marginCloseout"] = (
-                ctx.transaction.MarketOrderMarginCloseout.from_dict(
-                    data["marginCloseout"], ctx
-                )
+            data["marginCloseout"] = ctx.transaction.MarketOrderMarginCloseout.from_dict(
+                data["marginCloseout"], ctx
             )
 
         if data.get("delayedTradeClose") is not None:
-            data["delayedTradeClose"] = (
-                ctx.transaction.MarketOrderDelayedTradeClose.from_dict(
-                    data["delayedTradeClose"], ctx
-                )
+            data["delayedTradeClose"] = ctx.transaction.MarketOrderDelayedTradeClose.from_dict(
+                data["delayedTradeClose"], ctx
             )
 
         if data.get("clientExtensions") is not None:
@@ -1284,10 +1264,8 @@ class MarketOrderRejectTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -1308,9 +1286,7 @@ class FixedPriceOrderTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Create Fixed Price Order {id} ({reason}): {units} of {instrument}"
-    )
+    _summary_format = "Create Fixed Price Order {id} ({reason}): {units} of {instrument}"
 
     #
     # Format string used when generating a name for this object
@@ -1464,10 +1440,8 @@ class FixedPriceOrderTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -1487,9 +1461,7 @@ class LimitOrderTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Create Limit Order {id} ({reason}): {units} of {instrument} @ {price}"
-    )
+    _summary_format = "Create Limit Order {id} ({reason}): {units} of {instrument} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -1684,10 +1656,8 @@ class LimitOrderTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -1901,10 +1871,8 @@ class LimitOrderRejectTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -1924,9 +1892,7 @@ class StopOrderTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Create Stop Order {id} ({reason}): {units} of {instrument} @ {price}"
-    )
+    _summary_format = "Create Stop Order {id} ({reason}): {units} of {instrument} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -2131,10 +2097,8 @@ class StopOrderTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2358,10 +2322,8 @@ class StopOrderRejectTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2381,9 +2343,7 @@ class MarketIfTouchedOrderTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Create MIT Order {id} ({reason}): {units} of {instrument} @ {price}"
-    )
+    _summary_format = "Create MIT Order {id} ({reason}): {units} of {instrument} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -2591,10 +2551,8 @@ class MarketIfTouchedOrderTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2822,10 +2780,8 @@ class MarketIfTouchedOrderRejectTransaction(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2845,9 +2801,7 @@ class TakeProfitOrderTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Create Take Profit Order {id} ({reason}): Close Trade {tradeID} @ {price}"
-    )
+    _summary_format = "Create Take Profit Order {id} ({reason}): Close Trade {tradeID} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -3015,9 +2969,7 @@ class TakeProfitOrderRejectTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Reject Take Profit Order ({reason}): Close Trade {tradeID} @ {price}"
-    )
+    _summary_format = "Reject Take Profit Order ({reason}): Close Trade {tradeID} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -3184,9 +3136,7 @@ class StopLossOrderTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Create Stop Loss Order {id} ({reason}): Close Trade {tradeID} @ {price}"
-    )
+    _summary_format = "Create Stop Loss Order {id} ({reason}): Close Trade {tradeID} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -3386,9 +3336,7 @@ class StopLossOrderRejectTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Reject Stop Loss Order ({reason}): Close Trade {tradeID} @ {price}"
-    )
+    _summary_format = "Reject Stop Loss Order ({reason}): Close Trade {tradeID} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -3574,9 +3522,7 @@ class TrailingStopLossOrderTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Create Trailing Stop Loss Order {id} ({reason}): Close Trade {tradeID}"
-    )
+    _summary_format = "Create Trailing Stop Loss Order {id} ({reason}): Close Trade {tradeID}"
 
     #
     # Format string used when generating a name for this object
@@ -3743,9 +3689,7 @@ class TrailingStopLossOrderRejectTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Reject Trailing Stop Loss Order ({reason}): Close Trade {tradeID}"
-    )
+    _summary_format = "Reject Trailing Stop Loss Order ({reason}): Close Trade {tradeID}"
 
     #
     # Format string used when generating a name for this object
@@ -3913,9 +3857,7 @@ class OrderFillTransaction(BaseEntity):
     #
     # Format string used when generating a summary for this object
     #
-    _summary_format = (
-        "Fill Order {orderID} ({reason}): {units} of {instrument} @ {price}"
-    )
+    _summary_format = "Fill Order {orderID} ({reason}): {units} of {instrument} @ {price}"
 
     #
     # Format string used when generating a name for this object
@@ -4119,9 +4061,7 @@ class OrderFillTransaction(BaseEntity):
             data["fullVWAP"] = ctx.convert_decimal_number(data.get("fullVWAP"))
 
         if data.get("fullPrice") is not None:
-            data["fullPrice"] = ctx.pricing.ClientPrice.from_dict(
-                data["fullPrice"], ctx
-            )
+            data["fullPrice"] = ctx.pricing.ClientPrice.from_dict(data["fullPrice"], ctx)
 
         if data.get("pl") is not None:
             data["pl"] = ctx.convert_decimal_number(data.get("pl"))
@@ -4138,30 +4078,21 @@ class OrderFillTransaction(BaseEntity):
             )
 
         if data.get("accountBalance") is not None:
-            data["accountBalance"] = ctx.convert_decimal_number(
-                data.get("accountBalance")
-            )
+            data["accountBalance"] = ctx.convert_decimal_number(data.get("accountBalance"))
 
         if data.get("tradeOpened") is not None:
-            data["tradeOpened"] = ctx.transaction.TradeOpen.from_dict(
-                data["tradeOpened"], ctx
-            )
+            data["tradeOpened"] = ctx.transaction.TradeOpen.from_dict(data["tradeOpened"], ctx)
 
         if data.get("tradesClosed") is not None:
             data["tradesClosed"] = [
-                ctx.transaction.TradeReduce.from_dict(d, ctx)
-                for d in data.get("tradesClosed")
+                ctx.transaction.TradeReduce.from_dict(d, ctx) for d in data.get("tradesClosed")
             ]
 
         if data.get("tradeReduced") is not None:
-            data["tradeReduced"] = ctx.transaction.TradeReduce.from_dict(
-                data["tradeReduced"], ctx
-            )
+            data["tradeReduced"] = ctx.transaction.TradeReduce.from_dict(data["tradeReduced"], ctx)
 
         if data.get("halfSpreadCost") is not None:
-            data["halfSpreadCost"] = ctx.convert_decimal_number(
-                data.get("halfSpreadCost")
-            )
+            data["halfSpreadCost"] = ctx.convert_decimal_number(data.get("halfSpreadCost"))
 
         return OrderFillTransaction(**data)
 
@@ -4464,10 +4395,8 @@ class OrderClientExtensionsModifyTransaction(BaseEntity):
             )
 
         if data.get("tradeClientExtensionsModify") is not None:
-            data["tradeClientExtensionsModify"] = (
-                ctx.transaction.ClientExtensions.from_dict(
-                    data["tradeClientExtensionsModify"], ctx
-                )
+            data["tradeClientExtensionsModify"] = ctx.transaction.ClientExtensions.from_dict(
+                data["tradeClientExtensionsModify"], ctx
             )
 
         return OrderClientExtensionsModifyTransaction(**data)
@@ -4492,9 +4421,7 @@ class OrderClientExtensionsModifyRejectTransaction(BaseEntity):
     #
     # Property metadata for this object
     #
-    _properties = (
-        spec_properties.transaction_OrderClientExtensionsModifyRejectTransaction
-    )
+    _properties = spec_properties.transaction_OrderClientExtensionsModifyRejectTransaction
 
     def __init__(self, **kwargs):
         """
@@ -4584,10 +4511,8 @@ class OrderClientExtensionsModifyRejectTransaction(BaseEntity):
             )
 
         if data.get("tradeClientExtensionsModify") is not None:
-            data["tradeClientExtensionsModify"] = (
-                ctx.transaction.ClientExtensions.from_dict(
-                    data["tradeClientExtensionsModify"], ctx
-                )
+            data["tradeClientExtensionsModify"] = ctx.transaction.ClientExtensions.from_dict(
+                data["tradeClientExtensionsModify"], ctx
             )
 
         return OrderClientExtensionsModifyRejectTransaction(**data)
@@ -4687,10 +4612,8 @@ class TradeClientExtensionsModifyTransaction(BaseEntity):
         data = data.copy()
 
         if data.get("tradeClientExtensionsModify") is not None:
-            data["tradeClientExtensionsModify"] = (
-                ctx.transaction.ClientExtensions.from_dict(
-                    data["tradeClientExtensionsModify"], ctx
-                )
+            data["tradeClientExtensionsModify"] = ctx.transaction.ClientExtensions.from_dict(
+                data["tradeClientExtensionsModify"], ctx
             )
 
         return TradeClientExtensionsModifyTransaction(**data)
@@ -4715,9 +4638,7 @@ class TradeClientExtensionsModifyRejectTransaction(BaseEntity):
     #
     # Property metadata for this object
     #
-    _properties = (
-        spec_properties.transaction_TradeClientExtensionsModifyRejectTransaction
-    )
+    _properties = spec_properties.transaction_TradeClientExtensionsModifyRejectTransaction
 
     def __init__(self, **kwargs):
         """
@@ -4797,10 +4718,8 @@ class TradeClientExtensionsModifyRejectTransaction(BaseEntity):
         data = data.copy()
 
         if data.get("tradeClientExtensionsModify") is not None:
-            data["tradeClientExtensionsModify"] = (
-                ctx.transaction.ClientExtensions.from_dict(
-                    data["tradeClientExtensionsModify"], ctx
-                )
+            data["tradeClientExtensionsModify"] = ctx.transaction.ClientExtensions.from_dict(
+                data["tradeClientExtensionsModify"], ctx
             )
 
         return TradeClientExtensionsModifyRejectTransaction(**data)
@@ -5238,9 +5157,7 @@ class DailyFinancingTransaction(BaseEntity):
             data["financing"] = ctx.convert_decimal_number(data.get("financing"))
 
         if data.get("accountBalance") is not None:
-            data["accountBalance"] = ctx.convert_decimal_number(
-                data.get("accountBalance")
-            )
+            data["accountBalance"] = ctx.convert_decimal_number(data.get("accountBalance"))
 
         if data.get("positionFinancings") is not None:
             data["positionFinancings"] = [
@@ -5723,9 +5640,7 @@ class TradeOpen(BaseEntity):
             )
 
         if data.get("halfSpreadCost") is not None:
-            data["halfSpreadCost"] = ctx.convert_decimal_number(
-                data.get("halfSpreadCost")
-            )
+            data["halfSpreadCost"] = ctx.convert_decimal_number(data.get("halfSpreadCost"))
 
         if data.get("initialMarginRequired") is not None:
             data["initialMarginRequired"] = ctx.convert_decimal_number(
@@ -5832,9 +5747,7 @@ class TradeReduce(BaseEntity):
             )
 
         if data.get("halfSpreadCost") is not None:
-            data["halfSpreadCost"] = ctx.convert_decimal_number(
-                data.get("halfSpreadCost")
-            )
+            data["halfSpreadCost"] = ctx.convert_decimal_number(data.get("halfSpreadCost"))
 
         return TradeReduce(**data)
 
@@ -6164,14 +6077,10 @@ class LiquidityRegenerationScheduleStep(BaseEntity):
         data = data.copy()
 
         if data.get("bidLiquidityUsed") is not None:
-            data["bidLiquidityUsed"] = ctx.convert_decimal_number(
-                data.get("bidLiquidityUsed")
-            )
+            data["bidLiquidityUsed"] = ctx.convert_decimal_number(data.get("bidLiquidityUsed"))
 
         if data.get("askLiquidityUsed") is not None:
-            data["askLiquidityUsed"] = ctx.convert_decimal_number(
-                data.get("askLiquidityUsed")
-            )
+            data["askLiquidityUsed"] = ctx.convert_decimal_number(data.get("askLiquidityUsed"))
 
         return LiquidityRegenerationScheduleStep(**data)
 
@@ -6386,13 +6295,9 @@ class EntitySpec(object):
     OrderCancelTransaction = OrderCancelTransaction
     OrderCancelRejectTransaction = OrderCancelRejectTransaction
     OrderClientExtensionsModifyTransaction = OrderClientExtensionsModifyTransaction
-    OrderClientExtensionsModifyRejectTransaction = (
-        OrderClientExtensionsModifyRejectTransaction
-    )
+    OrderClientExtensionsModifyRejectTransaction = OrderClientExtensionsModifyRejectTransaction
     TradeClientExtensionsModifyTransaction = TradeClientExtensionsModifyTransaction
-    TradeClientExtensionsModifyRejectTransaction = (
-        TradeClientExtensionsModifyRejectTransaction
-    )
+    TradeClientExtensionsModifyRejectTransaction = TradeClientExtensionsModifyRejectTransaction
     MarginCallEnterTransaction = MarginCallEnterTransaction
     MarginCallExtendTransaction = MarginCallExtendTransaction
     MarginCallExitTransaction = MarginCallExitTransaction
@@ -6559,9 +6464,7 @@ class EntitySpec(object):
             request
         """
 
-        request = Request(
-            "GET", "/v3/accounts/{accountID}/transactions/{transactionID}"
-        )
+        request = Request("GET", "/v3/accounts/{accountID}/transactions/{transactionID}")
 
         request.set_path_param("accountID", accountID)
 
@@ -6850,9 +6753,7 @@ class EntitySpec(object):
                 elif type == "HEARTBEAT":
                     return (
                         "transaction.TransactionHeartbeat",
-                        self.ctx.transaction.TransactionHeartbeat.from_dict(
-                            j, self.ctx
-                        ),
+                        self.ctx.transaction.TransactionHeartbeat.from_dict(j, self.ctx),
                     )
 
                 transaction = self.ctx.transaction.Transaction.from_dict(j, self.ctx)

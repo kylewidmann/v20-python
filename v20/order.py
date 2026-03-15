@@ -121,14 +121,10 @@ class DynamicOrderState(BaseEntity):
         data = data.copy()
 
         if data.get("trailingStopValue") is not None:
-            data["trailingStopValue"] = ctx.convert_decimal_number(
-                data.get("trailingStopValue")
-            )
+            data["trailingStopValue"] = ctx.convert_decimal_number(data.get("trailingStopValue"))
 
         if data.get("triggerDistance") is not None:
-            data["triggerDistance"] = ctx.convert_decimal_number(
-                data.get("triggerDistance")
-            )
+            data["triggerDistance"] = ctx.convert_decimal_number(data.get("triggerDistance"))
 
         return DynamicOrderState(**data)
 
@@ -438,31 +434,23 @@ class MarketOrder(BaseEntity):
             )
 
         if data.get("longPositionCloseout") is not None:
-            data["longPositionCloseout"] = (
-                ctx.transaction.MarketOrderPositionCloseout.from_dict(
-                    data["longPositionCloseout"], ctx
-                )
+            data["longPositionCloseout"] = ctx.transaction.MarketOrderPositionCloseout.from_dict(
+                data["longPositionCloseout"], ctx
             )
 
         if data.get("shortPositionCloseout") is not None:
-            data["shortPositionCloseout"] = (
-                ctx.transaction.MarketOrderPositionCloseout.from_dict(
-                    data["shortPositionCloseout"], ctx
-                )
+            data["shortPositionCloseout"] = ctx.transaction.MarketOrderPositionCloseout.from_dict(
+                data["shortPositionCloseout"], ctx
             )
 
         if data.get("marginCloseout") is not None:
-            data["marginCloseout"] = (
-                ctx.transaction.MarketOrderMarginCloseout.from_dict(
-                    data["marginCloseout"], ctx
-                )
+            data["marginCloseout"] = ctx.transaction.MarketOrderMarginCloseout.from_dict(
+                data["marginCloseout"], ctx
             )
 
         if data.get("delayedTradeClose") is not None:
-            data["delayedTradeClose"] = (
-                ctx.transaction.MarketOrderDelayedTradeClose.from_dict(
-                    data["delayedTradeClose"], ctx
-                )
+            data["delayedTradeClose"] = ctx.transaction.MarketOrderDelayedTradeClose.from_dict(
+                data["delayedTradeClose"], ctx
             )
 
         if data.get("takeProfitOnFill") is not None:
@@ -476,10 +464,8 @@ class MarketOrder(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -684,10 +670,8 @@ class FixedPriceOrder(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -931,10 +915,8 @@ class LimitOrder(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -1188,10 +1170,8 @@ class StopOrder(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -1446,9 +1426,7 @@ class MarketIfTouchedOrder(BaseEntity):
             data["priceBound"] = ctx.convert_decimal_number(data.get("priceBound"))
 
         if data.get("initialMarketPrice") is not None:
-            data["initialMarketPrice"] = ctx.convert_decimal_number(
-                data.get("initialMarketPrice")
-            )
+            data["initialMarketPrice"] = ctx.convert_decimal_number(data.get("initialMarketPrice"))
 
         if data.get("takeProfitOnFill") is not None:
             data["takeProfitOnFill"] = ctx.transaction.TakeProfitDetails.from_dict(
@@ -1461,10 +1439,8 @@ class MarketIfTouchedOrder(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2078,9 +2054,7 @@ class TrailingStopLossOrder(BaseEntity):
             data["distance"] = ctx.convert_decimal_number(data.get("distance"))
 
         if data.get("trailingStopValue") is not None:
-            data["trailingStopValue"] = ctx.convert_decimal_number(
-                data.get("trailingStopValue")
-            )
+            data["trailingStopValue"] = ctx.convert_decimal_number(data.get("trailingStopValue"))
 
         return TrailingStopLossOrder(**data)
 
@@ -2260,10 +2234,8 @@ class MarketOrderRequest(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2436,10 +2408,8 @@ class LimitOrderRequest(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2622,10 +2592,8 @@ class StopOrderRequest(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -2811,10 +2779,8 @@ class MarketIfTouchedOrderRequest(BaseEntity):
             )
 
         if data.get("trailingStopLossOnFill") is not None:
-            data["trailingStopLossOnFill"] = (
-                ctx.transaction.TrailingStopLossDetails.from_dict(
-                    data["trailingStopLossOnFill"], ctx
-                )
+            data["trailingStopLossOnFill"] = ctx.transaction.TrailingStopLossDetails.from_dict(
+                data["trailingStopLossOnFill"], ctx
             )
 
         if data.get("tradeClientExtensions") is not None:
@@ -3307,9 +3273,7 @@ class UnitsAvailable(BaseEntity):
         data = data.copy()
 
         if data.get("default") is not None:
-            data["default"] = ctx.order.UnitsAvailableDetails.from_dict(
-                data["default"], ctx
-            )
+            data["default"] = ctx.order.UnitsAvailableDetails.from_dict(data["default"], ctx)
 
         if data.get("reduceFirst") is not None:
             data["reduceFirst"] = ctx.order.UnitsAvailableDetails.from_dict(
@@ -3317,14 +3281,10 @@ class UnitsAvailable(BaseEntity):
             )
 
         if data.get("reduceOnly") is not None:
-            data["reduceOnly"] = ctx.order.UnitsAvailableDetails.from_dict(
-                data["reduceOnly"], ctx
-            )
+            data["reduceOnly"] = ctx.order.UnitsAvailableDetails.from_dict(data["reduceOnly"], ctx)
 
         if data.get("openOnly") is not None:
-            data["openOnly"] = ctx.order.UnitsAvailableDetails.from_dict(
-                data["openOnly"], ctx
-            )
+            data["openOnly"] = ctx.order.UnitsAvailableDetails.from_dict(data["openOnly"], ctx)
 
         return UnitsAvailable(**data)
 
@@ -3386,9 +3346,7 @@ class GuaranteedStopLossOrderEntryData(BaseEntity):
         data = data.copy()
 
         if data.get("minimumDistance") is not None:
-            data["minimumDistance"] = ctx.convert_decimal_number(
-                data.get("minimumDistance")
-            )
+            data["minimumDistance"] = ctx.convert_decimal_number(data.get("minimumDistance"))
 
         if data.get("premium") is not None:
             data["premium"] = ctx.convert_decimal_number(data.get("premium"))
@@ -3479,10 +3437,8 @@ class EntitySpec(object):
         #
         if str(response.status) == "201":
             if jbody.get("orderCreateTransaction") is not None:
-                parsed_body["orderCreateTransaction"] = (
-                    self.ctx.transaction.Transaction.from_dict(
-                        jbody["orderCreateTransaction"], self.ctx
-                    )
+                parsed_body["orderCreateTransaction"] = self.ctx.transaction.Transaction.from_dict(
+                    jbody["orderCreateTransaction"], self.ctx
                 )
 
             if jbody.get("orderFillTransaction") is not None:
@@ -3500,10 +3456,8 @@ class EntitySpec(object):
                 )
 
             if jbody.get("orderReissueTransaction") is not None:
-                parsed_body["orderReissueTransaction"] = (
-                    self.ctx.transaction.Transaction.from_dict(
-                        jbody["orderReissueTransaction"], self.ctx
-                    )
+                parsed_body["orderReissueTransaction"] = self.ctx.transaction.Transaction.from_dict(
+                    jbody["orderReissueTransaction"], self.ctx
                 )
 
             if jbody.get("orderReissueRejectTransaction") is not None:
@@ -3514,25 +3468,19 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
         elif str(response.status) == "400":
             if jbody.get("orderRejectTransaction") is not None:
-                parsed_body["orderRejectTransaction"] = (
-                    self.ctx.transaction.Transaction.from_dict(
-                        jbody["orderRejectTransaction"], self.ctx
-                    )
+                parsed_body["orderRejectTransaction"] = self.ctx.transaction.Transaction.from_dict(
+                    jbody["orderRejectTransaction"], self.ctx
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -3559,16 +3507,12 @@ class EntitySpec(object):
 
         elif str(response.status) == "404":
             if jbody.get("orderRejectTransaction") is not None:
-                parsed_body["orderRejectTransaction"] = (
-                    self.ctx.transaction.Transaction.from_dict(
-                        jbody["orderRejectTransaction"], self.ctx
-                    )
+                parsed_body["orderRejectTransaction"] = self.ctx.transaction.Transaction.from_dict(
+                    jbody["orderRejectTransaction"], self.ctx
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -3652,8 +3596,7 @@ class EntitySpec(object):
         if str(response.status) == "200":
             if jbody.get("orders") is not None:
                 parsed_body["orders"] = [
-                    self.ctx.order.Order.from_dict(d, self.ctx)
-                    for d in jbody.get("orders")
+                    self.ctx.order.Order.from_dict(d, self.ctx) for d in jbody.get("orders")
                 ]
 
             if jbody.get("lastTransactionID") is not None:
@@ -3725,8 +3668,7 @@ class EntitySpec(object):
         if str(response.status) == "200":
             if jbody.get("orders") is not None:
                 parsed_body["orders"] = [
-                    self.ctx.order.Order.from_dict(d, self.ctx)
-                    for d in jbody.get("orders")
+                    self.ctx.order.Order.from_dict(d, self.ctx) for d in jbody.get("orders")
                 ]
 
             if jbody.get("lastTransactionID") is not None:
@@ -3801,9 +3743,7 @@ class EntitySpec(object):
         #
         if str(response.status) == "200":
             if jbody.get("order") is not None:
-                parsed_body["order"] = self.ctx.order.Order.from_dict(
-                    jbody["order"], self.ctx
-                )
+                parsed_body["order"] = self.ctx.order.Order.from_dict(jbody["order"], self.ctx)
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -3894,10 +3834,8 @@ class EntitySpec(object):
                 )
 
             if jbody.get("orderCreateTransaction") is not None:
-                parsed_body["orderCreateTransaction"] = (
-                    self.ctx.transaction.Transaction.from_dict(
-                        jbody["orderCreateTransaction"], self.ctx
-                    )
+                parsed_body["orderCreateTransaction"] = self.ctx.transaction.Transaction.from_dict(
+                    jbody["orderCreateTransaction"], self.ctx
                 )
 
             if jbody.get("orderFillTransaction") is not None:
@@ -3908,10 +3846,8 @@ class EntitySpec(object):
                 )
 
             if jbody.get("orderReissueTransaction") is not None:
-                parsed_body["orderReissueTransaction"] = (
-                    self.ctx.transaction.Transaction.from_dict(
-                        jbody["orderReissueTransaction"], self.ctx
-                    )
+                parsed_body["orderReissueTransaction"] = self.ctx.transaction.Transaction.from_dict(
+                    jbody["orderReissueTransaction"], self.ctx
                 )
 
             if jbody.get("orderReissueRejectTransaction") is not None:
@@ -3929,25 +3865,19 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
         elif str(response.status) == "400":
             if jbody.get("orderRejectTransaction") is not None:
-                parsed_body["orderRejectTransaction"] = (
-                    self.ctx.transaction.Transaction.from_dict(
-                        jbody["orderRejectTransaction"], self.ctx
-                    )
+                parsed_body["orderRejectTransaction"] = self.ctx.transaction.Transaction.from_dict(
+                    jbody["orderRejectTransaction"], self.ctx
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -3974,9 +3904,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -4019,9 +3947,7 @@ class EntitySpec(object):
             request
         """
 
-        request = Request(
-            "PUT", "/v3/accounts/{accountID}/orders/{orderSpecifier}/cancel"
-        )
+        request = Request("PUT", "/v3/accounts/{accountID}/orders/{orderSpecifier}/cancel")
 
         request.set_path_param("accountID", accountID)
 
@@ -4051,9 +3977,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -4074,9 +3998,7 @@ class EntitySpec(object):
                 )
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("lastTransactionID") is not None:
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
@@ -4174,9 +4096,7 @@ class EntitySpec(object):
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
         elif str(response.status) == "400":
             if jbody.get("orderClientExtensionsModifyRejectTransaction") is not None:
@@ -4190,9 +4110,7 @@ class EntitySpec(object):
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("errorCode") is not None:
                 parsed_body["errorCode"] = jbody.get("errorCode")
@@ -4219,9 +4137,7 @@ class EntitySpec(object):
                 parsed_body["lastTransactionID"] = jbody.get("lastTransactionID")
 
             if jbody.get("relatedTransactionIDs") is not None:
-                parsed_body["relatedTransactionIDs"] = jbody.get(
-                    "relatedTransactionIDs"
-                )
+                parsed_body["relatedTransactionIDs"] = jbody.get("relatedTransactionIDs")
 
             if jbody.get("errorCode") is not None:
                 parsed_body["errorCode"] = jbody.get("errorCode")
@@ -4345,9 +4261,7 @@ class EntitySpec(object):
             v20.response.Response containing the results from submitting
             the request
         """
-        return self.replace(
-            accountID, orderID, order=MarketIfTouchedOrderRequest(**kwargs)
-        )
+        return self.replace(accountID, orderID, order=MarketIfTouchedOrderRequest(**kwargs))
 
     def take_profit(self, accountID, **kwargs):
         """
@@ -4434,6 +4348,4 @@ class EntitySpec(object):
             v20.response.Response containing the results from submitting
             the request
         """
-        return self.replace(
-            accountID, orderID, order=TrailingStopLossOrderRequest(**kwargs)
-        )
+        return self.replace(accountID, orderID, order=TrailingStopLossOrderRequest(**kwargs))

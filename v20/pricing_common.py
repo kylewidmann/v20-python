@@ -153,14 +153,12 @@ class Price(BaseEntity):
 
         if data.get("bids") is not None:
             data["bids"] = [
-                ctx.pricing_common.PriceBucket.from_dict(d, ctx)
-                for d in data.get("bids")
+                ctx.pricing_common.PriceBucket.from_dict(d, ctx) for d in data.get("bids")
             ]
 
         if data.get("asks") is not None:
             data["asks"] = [
-                ctx.pricing_common.PriceBucket.from_dict(d, ctx)
-                for d in data.get("asks")
+                ctx.pricing_common.PriceBucket.from_dict(d, ctx) for d in data.get("asks")
             ]
 
         if data.get("closeoutBid") is not None:
